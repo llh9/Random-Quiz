@@ -111,6 +111,15 @@ startBtn.addEventListener("click", function(event){
         //Store the letter of this Button in the coresponding chosen answer array index
         chAnsArray[crntQ - 1] = 'a';
 
+        //Determine if response is right or wrong and notify the user
+        if(chAnsArray[crntQ - 1] == rtAnsArray[crntQ - 1]){
+            alert("Right!");
+        }
+        
+        if(chAnsArray[crntQ - 1] !== rtAnsArray[crntQ - 1]){
+            alert("Wrong!");
+        }
+
         //if answering last question, calculate & display results
         if(crntQ == 5){
 
@@ -126,6 +135,14 @@ startBtn.addEventListener("click", function(event){
 
         //Store the letter of this Button in the coresponding chosen answer array index
         chAnsArray[crntQ - 1] = 'b';
+
+        //Determine if response is right or wrong and notify the user
+        if(chAnsArray[crntQ - 1] == rtAnsArray[crntQ - 1]){
+            alert("Right!");
+        }
+        if(chAnsArray[crntQ - 1] !== rtAnsArray[crntQ - 1]){
+            alert("Wrong!");
+        }
 
         //if answering last question, calculate & display results
         if(crntQ == 5){
@@ -143,6 +160,14 @@ startBtn.addEventListener("click", function(event){
         //Store the letter of this Button in the coresponding chosen answer array index
         chAnsArray[crntQ - 1] = 'c';
 
+        //Determine if response is right or wrong and notify the user
+        if(chAnsArray[crntQ - 1] == rtAnsArray[crntQ - 1]){
+            alert("Right!");
+        }
+        if(chAnsArray[crntQ - 1] !== rtAnsArray[crntQ - 1]){
+            alert("Wrong!");
+        }
+
         //if answering last question, calculate & display results
         if(crntQ == 5){
 
@@ -158,6 +183,14 @@ startBtn.addEventListener("click", function(event){
 
         //Store the letter of this Button in the coresponding chosen answer array index
         chAnsArray[crntQ - 1] = 'd';
+
+        //Determine if response is right or wrong and notify the user
+        if(chAnsArray[crntQ - 1] == rtAnsArray[crntQ - 1]){
+            alert("Right!");
+        }
+        if(chAnsArray[crntQ - 1] !== rtAnsArray[crntQ - 1]){
+            alert("Wrong!");
+        }
 
         //if answering last question, calculate & display results
         if(crntQ == 5){

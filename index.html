@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Random Quiz</title>
     <link rel="stylesheet" href="./Assets/css/style.css" />
+    
   </head>
 
   <body>
@@ -13,63 +16,79 @@
     <div class="wrapper">
 
       <header>
+
         <h1>Random Quiz</h1>
         <p>Click the Start button to begin the Random Quiz</p>
         <button id="startBtn" class="btn" onclick="style.display = 'none'">Start</button>
+
       </header>
 
 
-      <div class="card">
+      <main class="card">
         
-        <div class="card-header" b>
+        <section class="card-header" b>
+
           <p id="timer"></p>
           <h2 id="QNum"></h2>
-        </div>
 
-        <div class="card-body">
-          <textarea readonly id="question" 
-            aria-label="Generated Question"></textarea>
-        </div>
+        </section>
 
-        <div class="card-footer">
+        <section class="card-body">
+
+          <textarea readonly id="question" aria-label="Generated Question"></textarea>
+
+        </section>
+
+        <section class="card-footer">
           
           <section class="ansSection">
+
             <button id="aBtn" class="btn">A</button>
             <p id="aTxt"></p>
+
           </section>
         
           <hr>
 
           <section class="ansSection">
+
             <button id="bBtn" class="btn">B</button>
             <p id="bTxt"></p>
+
           </section>
 
           <hr>
 
           <section class="ansSection">
+
             <button id="cBtn" class="btn">C</button>
             <p id="cTxt"></p>
+
           </section>
 
           <hr>
 
           <section class="ansSection">
+
             <button id="dBtn" class="btn">D</button>
             <p id="dTxt"></p>
+
           </section>
 
           <hr>
 
           <section class="navSection">
+
             <button id="Previous" class="btn">Previous</button>
             <button id="Next" class="btn">Next</button>
+
           </section>
 
-        </div>
+        </section>
 
-      </div>
+      </main>
     </div>
+
     <script src="./Assets/js/script.js"></script>
   </body>
 </html>

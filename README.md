@@ -22,7 +22,7 @@ Given this is a Random Quiz, when the start button is clicked the user is asked 
 
 ## Screen-Shot
 
-The following Image is a screenshot of my ap:
+The following Image is a screen shot of the Random Quiz showing the final display and the localy stored object:
 
 ![A screen shot of the Random Quiz showing the final display and the localy stored object](./Assets/images/quiz-screenshot.PNG)
 
