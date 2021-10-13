@@ -115,7 +115,7 @@ startBtn.addEventListener("click", function(event){
         if(chAnsArray[crntQ - 1] == rtAnsArray[crntQ - 1]){
             alert("Right!");
         }
-        
+
         if(chAnsArray[crntQ - 1] !== rtAnsArray[crntQ - 1]){
             alert("Wrong!");
         }
@@ -207,12 +207,27 @@ startBtn.addEventListener("click", function(event){
 
     next.addEventListener("click", function(event){
 
+         //if answering last question, calculate & display results
+         if(crntQ == 5){
+
+            alert("No further questions exist! Make sure this question is answered last if you have skipped any others.");
+            
+        }else{
         nxt();
+        }
+
     });
 
     prev.addEventListener("click", function(event){
 
+         //if answering last question, calculate & display results
+         if(crntQ == 1){
+
+            alert("No previous questions exist!");
+            
+        }else{
         last();
+        }
         
     });
 
