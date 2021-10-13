@@ -1,39 +1,8 @@
-//set of variables to reference html items
-/*    //local storage variables
-var timer = document.querySelector("#timer");
-var qNum = document.querySelector("#QNum");
-var textArea = document.querySelector("#question");
-var startBtn = document.querySelector("#startBtn");
-var ansSec = document.querySelector(".btn");
-var aBtn = document.querySelector("#aBtn");
-var bBtn = document.querySelector("#bBtn");
-var cBtn = document.querySelector("#cBtn");
-var dBtn = document.querySelector("#dBtn");
-var aBtn = document.querySelector("#aTxt");
-var bBtn = document.querySelector("#bTxt");
-var cBtn = document.querySelector("#cTxt");
-var dBtn = document.querySelector("#dTxt");
-
-//set of logic variables 
-var numArray = ["#!","#2","#3","#4","#5"];
-var qstnArray = ["q1","q2","q3","q4","q5"];
-var rtAnsArray = ["b","b","b","b","b"];
-var aArray = ["a","a","a","a","a"];
-var bArray = ["b","b","b","b","b"];
-var cArray = ["c","c","c","c","c"];
-var dArray = ["d","d","d","d","d"];
-var scoreTally = [0,0,0,0,0];*/
-
-
 // When the site loads
+//references to buttons
 var startBtn = document.querySelector("#startBtn");
 var timer = document.querySelector("#timer");
-var secondsLeft = 10;
 var textArea = document.querySelector("#question");
-var qstnArray = ["What's your favorite color?","What is the name of the main character in the movie 'Nightmare Before Christmas?","Which weighs more? ","How much wood would a wood pecker peck if wood pecker could peck wood?","How tall was Abraham Lincoln"];
-var numArray = ["#1","#2","#3","#4","#5"];
-var rtAnsArray = ["b","b","b","b","b"];
-var chAnsArray = ['','','','',''];
 var qNum = document.querySelector("#QNum");
 var aTxt = document.querySelector("#aTxt");
 var bTxt = document.querySelector("#bTxt");
@@ -45,10 +14,16 @@ var cBtn = document.querySelector("#cBtn");
 var dBtn = document.querySelector("#dBtn");
 var prev = document.querySelector("#Previous");
 var next = document.querySelector("#Next");
-var aArray = ["blue","a","a","a","a"];
-var bArray = ["white","b","b","b","b"];
-var cArray = ["red","c","c","c","c"];
-var dArray = ["black","d","d","d","d"];
+//logic arrays
+var qstnArray = ["What's my favorite color?","What is the name of the main character in the movie 'Nightmare Before Christmas?","Which weighs more? ","How much wood would a wood pecker peck if wood pecker could peck wood?","How tall was Abraham Lincoln"];
+var numArray = ["#1","#2","#3","#4","#5"];
+var rtAnsArray = ["d","c","d","d","a"];
+var chAnsArray = ['','','','',''];
+var aArray = ["blue","Cinderella","a lb of fish","none","6ft 4in"];
+var bArray = ["white","Jack Black","a lb of rocks","all","6ft 1in"];
+var cArray = ["purple","Jack Skelington","a lb of air","most","6ft 6in"];
+var dArray = ["red & black","Landon","none of the above","as much as is needed to get them bugs out of there","6ft"];
+var secondsLeft = 120;
 //when the start button is clicked
 startBtn.addEventListener("click", function(event){
     event.preventDefault();
@@ -72,10 +47,10 @@ startBtn.addEventListener("click", function(event){
 
     }
 
-
+    var timerInterval
     function setTime() {
         // Sets interval in variable
-        var timerInterval = setInterval(function() {
+            timerInterval = setInterval(function() {
           secondsLeft--;
           timer.textContent = secondsLeft + "s";
       
@@ -168,7 +143,7 @@ startBtn.addEventListener("click", function(event){
         document.getElementById("cBtn").disabled = true;
         document.getElementById("dBtn").disabled = true;
         document.getElementById("Previous").disabled = true;document.getElementById("Next").disabled = true;
-
+        clearInterval(timerInterval);
         //extract local storage values and update them 
         //extract entire object
         var userUpdate = JSON.parse(localStorage.getItem(user));
@@ -187,6 +162,8 @@ startBtn.addEventListener("click", function(event){
                 score++;
             };
         };
+        console.log(chAnsArray);
+        console.log(rtAnsArray);
         //compare previous high score to current score. Update if score is the new high score 
         if(score > hScore){
             hScore = score;
