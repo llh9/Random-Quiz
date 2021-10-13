@@ -28,7 +28,7 @@ var scoreTally = [0,0,0,0,0];*/
 // When the site loads
 var startBtn = document.querySelector("#startBtn");
 var timer = document.querySelector("#timer");
-var secondsLeft = 20;
+var secondsLeft = 120;
 var textArea = document.querySelector("#question");
 var qstnArray = ["What's your favorite color?","What is the name of the main character in the movie 'Nightmare Before Christmas?","Which weighs more? ","How much wood would a wood pecker peck if wood pecker could peck wood?","How tall was Abraham Lincoln"];
 var numArray = ["#1","#2","#3","#4","#5"];
@@ -69,10 +69,30 @@ startBtn.addEventListener("click", function(event){
 
         //Setup New User File
         localStorage.setItem(user, JSON.stringify(initUser));
+
     }
+
+
+    function setTime() {
+        // Sets interval in variable
+        var timerInterval = setInterval(function() {
+          secondsLeft--;
+          timer.textContent = secondsLeft + "s";
+      
+          if(secondsLeft === 0) {
+            // Stops execution of action at set interval
+            clearInterval(timerInterval);
+            // Calls function to create and append image
+            alert("Your time has run out!");
+          }
+      
+        }, 1000);
+    }
+    setTime();
 
     //Place first question and set of answers into txt areas
     var crntQ = 0;
+    console.log(crntQ);
     if(crntQ == 0){
         textArea.textContent = qstnArray[crntQ];
         qNum.textContent = numArray[crntQ];
@@ -125,25 +145,17 @@ startBtn.addEventListener("click", function(event){
         }
     });
 
+    console.log(crntQ);
+
     next.addEventListener("click", function(event){
 
-        //if answering last question, calculate & display results
-        if(crntQ == 5){
-            getResults();
-            return;
-        }else{
         nxt();
-        }
     });
 
     prev.addEventListener("click", function(event){
 
-        //if answering last question, calculate & display results
-        if(crntQ == 1){
-            return;
-        }else{
         last();
-        }
+        
     });
 
 
@@ -195,7 +207,6 @@ startBtn.addEventListener("click", function(event){
     }
 
    
-
     function nxt(){
         textArea.textContent = qstnArray[crntQ];
         qNum.textContent = numArray[crntQ];
@@ -203,6 +214,7 @@ startBtn.addEventListener("click", function(event){
         bTxt.textContent = bArray[crntQ];
         cTxt.textContent = cArray[crntQ];
         dTxt.textContent = dArray[crntQ];
+
         crntQ = crntQ + 1;
 
     }
