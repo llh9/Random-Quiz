@@ -28,7 +28,7 @@ var scoreTally = [0,0,0,0,0];*/
 // When the site loads
 var startBtn = document.querySelector("#startBtn");
 var timer = document.querySelector("#timer");
-var secondsLeft = 120;
+var secondsLeft = 10;
 var textArea = document.querySelector("#question");
 var qstnArray = ["What's your favorite color?","What is the name of the main character in the movie 'Nightmare Before Christmas?","Which weighs more? ","How much wood would a wood pecker peck if wood pecker could peck wood?","How tall was Abraham Lincoln"];
 var numArray = ["#1","#2","#3","#4","#5"];
@@ -84,6 +84,7 @@ startBtn.addEventListener("click", function(event){
             clearInterval(timerInterval);
             // Calls function to create and append image
             alert("Your time has run out!");
+            getResults();
           }
       
         }, 1000);
